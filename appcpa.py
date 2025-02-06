@@ -5,7 +5,7 @@ from sklearn.preprocessing import LabelEncoder
 import joblib
 
 # Load the dataset
-df = pd.read_csv('C:/VS Code/streamlit/Car Price Prediction/CarPrice_Assignment.csv')
+df = pd.read_csv('CarPrice_Assignment.csv')
 
 # Drop unnecessary columns
 X = df.drop(['car_ID', 'CarName', 'price'], axis=1)
@@ -27,7 +27,7 @@ X['doornumber'] = X['doornumber'].replace({'two': 2, 'four': 4})
 joblib.dump(label_encoders, 'label_encoders.joblib')
 
 # Load the trained model
-rf = joblib.load('C:/VS Code/streamlit/Car Price Prediction/random_forest_model.joblib')
+rf = joblib.load('random_forest_model.joblib')
 
 # Load the label encoders
 label_encoders = joblib.load('label_encoders.joblib')
