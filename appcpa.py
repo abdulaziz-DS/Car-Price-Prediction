@@ -112,7 +112,7 @@ y = df['price']
 X['doornumber'] = X['doornumber'].replace({'two': 2, 'four': 4}).astype(int)
 
 # Load the trained model
-rf = joblib.load('random_forest_model.pkl')
+rf = joblib.load('random_forest_model.joblib')
 
 # Streamlit App Interface
 st.title("Car Price Prediction")
