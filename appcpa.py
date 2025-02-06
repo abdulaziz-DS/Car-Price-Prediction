@@ -11,8 +11,7 @@ import joblib
 import os
 
 # Load the dataset
-file_path = r'CarPrice_Assignment.csv'
-df = pd.read_csv(file_path)
+df = pd.read_csv('CarPrice_Assignment.csv')
 
 # Drop unnecessary columns
 X = df.drop(['car_ID', 'CarName', 'price'], axis=1)
@@ -36,8 +35,7 @@ X['doornumber'] = X['doornumber'].replace({'two': 2, 'four': 4})
 joblib.dump(label_encoders, 'label_encoders.joblib')
 
 # Load the trained model
-model_path = r'random_forest_model.joblib'
-rf = joblib.load(model_path)
+rf = joblib.load('random_forest_model.joblib')
 
 # Define the prediction function
 def predict_car_price(
